@@ -58,7 +58,7 @@ Add(DS_SQLite,11819865,742,35)
  Name="Dbase"
  FileName="catalog.db"
 }
-Add(LineBreak,13508248,693,35)
+Add(LineBreak,7520142,693,35)
 {
  link(Out,11819865:doOpen,[])
  Primary=[2424157,-490,14]
@@ -260,7 +260,7 @@ BEGIN_SDK
      Angle=1
      link(Data,1727760:Var2,[(538,239)])
     }
-    Add(LineBreak,4586508,651,259)
+    Add(LineBreak,2763259,651,259)
     {
      link(Out,5288246:doString,[])
      Primary=[15199292,154,259]
@@ -1365,7 +1365,7 @@ BEGIN_SDK
   }
   Add(FormatStr,7365527,238,371)
   {
-   Mask="SELECT car_n, win, model FROM cat_num_car WHERE car_n like '%1%'"
+   Mask="SELECT car_n, win, model FROM cat_num_car WHERE car_n like '%1%' or win like '%1%'"
    link(onFString,61439:doQuery,[])
    link(Str1,8347266:Result,[(244,359)(219,359)(219,415)(188,415)])
   }
@@ -1646,7 +1646,7 @@ BEGIN_SDK
     {
      Message="Код запчасти уже существует в базе"
     }
-    Add(LineBreak,14151411,469,273)
+    Add(LineBreak,13685770,469,273)
     {
      link(Out,14130862:doString,[])
      Primary=[11818840,175,266]
@@ -1915,12 +1915,12 @@ BEGIN_SDK
        Caption="matrix"
        Type=2
       }
-      Add(LineBreak,2686273,602,490)
+      Add(LineBreak,7674866,602,490)
       {
        link(Out,13735132:doValue,[])
        Primary=[11847765,-112,-119]
       }
-      Add(LineBreak,9391303,707,378)
+      Add(LineBreak,12681531,707,378)
       {
        Type=1
        link(Data,6793317:Value,[])
@@ -1948,7 +1948,7 @@ BEGIN_SDK
        link(onEvent1,2476482:In,[(609,566)(609,545)])
        link(onEvent2,5390507:doString,[])
       }
-      Add(LineBreak,16183709,798,588)
+      Add(LineBreak,13462063,798,588)
       {
        link(Out,7963382:doClear,[(838,594)(838,580)])
        Primary=[2476482,-182,-49]
@@ -1985,7 +1985,7 @@ BEGIN_SDK
       {
        link(Data,5631335:GetData,[])
       }
-      Add(LineBreak,8676701,1190,735)
+      Add(LineBreak,15380356,1190,735)
       {
        link(Out,16508658:doAdd,[])
        Primary=[16674888,-126,-70]
@@ -2247,7 +2247,7 @@ BEGIN_SDK
     {
      Message="Код запчасти уже существует в базе"
     }
-    Add(LineBreak,10207389,469,273)
+    Add(LineBreak,1355146,469,273)
     {
      link(Out,3357603:doString,[])
      Primary=[8313955,175,266]
