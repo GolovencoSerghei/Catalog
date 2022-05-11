@@ -1282,7 +1282,7 @@ Add(GHotKey,11455285,406,322)
 }
 Add(hcVisualText,13695303,126,595)
 {
- Lines=#2:81|
+ Lines=#2:86|
 }
 Add(hcKeyHandler,11726099,42,609)
 {
@@ -1295,8 +1295,8 @@ BEGIN_SDK
   Add(EditMulti,12567383,21,21)
   {
    WorkCount=1
-   Width=916
-   Height=655
+   Width=1231
+   Height=725
    link(doWork1,7617127:doEvent1,[(98,27)(98,118)])
   }
   Add(MainForm,4088572,315,84)
@@ -1304,7 +1304,7 @@ BEGIN_SDK
    Left=35
    Top=105
    Width=491
-   Height=265
+   Height=506
    Visible=1
    Caption="Каталог авто"
    BorderStyle=3
@@ -1338,15 +1338,14 @@ BEGIN_SDK
   }
   Add(StringTable,14744707,581,371)
   {
-   Left=10
    Top=40
-   Width=470
+   Width=485
    Height=165
    Columns=#14:Номер авто=100|7:VIN=175|9:Марка=170|
    Redaction=1
    link(onClick,6614606:doEvent1,[])
   }
-  Add(DSC_Query,14318566,238,623)
+  Add(DSC_Query,14318566,154,595)
   {
    SQL="SELECT id, car_n, model FROM cat_num_car;"
    DSManager="parent.Dbase"
@@ -1375,56 +1374,135 @@ BEGIN_SDK
    link(onStrCat,7365527:doString,[])
    link(Str2,6265127:Text,[(195,366)(165,366)(165,413)(76,413)])
   }
-  Add(ClipboardHook,1472641,735,371)
+  Add(ClipboardHook,1472641,798,371)
   {
-   link(Text,12057599:Var3,[(741,359)(719,359)(719,415)])
+   link(Text,2289411:Var2,[])
   }
-  Add(MultiStrPart,12693082,672,371)
+  Add(MultiStrPart,12693082,721,371)
   {
    link(onSplit,1472641:doSetText,[])
-   link(Str,14744707:Select,[(678,359)(636,359)(636,415)(594,415)])
+   link(Str,15388899:Var3,[(727,359)(636,359)(636,411)])
   }
-  Add(Message,5272429,308,623)
+  Add(Message,5272429,224,595)
   {
   }
-  Add(Label,15561544,679,546)
+  Add(Label,15561544,1064,371)
   {
    Left=15
    Top=215
    Font=[MS Sans Serif,10,1,32768,1]
    Caption=""
   }
-  Add(FormatStr,9513160,609,546)
+  Add(FormatStr,9513160,931,371)
   {
    Mask="Скопирован VIN: %1"
    link(onFString,5587980:doWork2,[])
-   link(Str1,12057599:Var2,[(615,482)(692,482)])
+   link(Str1,2289411:Var3,[(937,359)])
   }
   Add(Hub,6614606,637,371)
   {
+   OutCount=3
    link(onEvent1,12693082:doSplit,[])
-   link(onEvent2,3365144:doEvent1,[(663,384)(663,468)(548,468)(548,552)])
+   link(onEvent2,13768692:In,[])
+   link(onEvent3,3461262:In,[(672,391)(672,440)])
   }
-  Add(GetDataEx,12057599,686,410)
-  {
-   Angle=3
-   link(Data,12693082:Part2,[(685,415)])
-  }
-  Add(Timer,12225243,609,595)
+  Add(Timer,12225243,931,420)
   {
    Interval=3000
    Enable=1
    AutoStop=1
-   link(onTimer,5587980:doWork3,[(662,601)])
+   link(onTimer,5587980:doWork3,[(984,426)])
   }
-  Add(Hub,3365144,560,546)
+  Add(Hub,3365144,868,371)
   {
    link(onEvent1,9513160:doString,[])
-   link(onEvent2,12225243:doTimer,[(592,559)(592,601)])
+   link(onEvent2,12225243:doTimer,[(900,384)(900,426)])
   }
-  Add(HubEx,5587980,658,546)
+  Add(HubEx,5587980,980,371)
   {
    link(onEvent,15561544:doText,[])
+  }
+  Add(StringTable,15412899,672,560)
+  {
+   Top=280
+   Width=485
+   Height=165
+   Columns=#14:Номер авто=100|7:VIN=175|9:Марка=170|
+   Redaction=1
+   link(onClick,6248613:doEvent1,[])
+  }
+  Add(DoData,856218,609,560)
+  {
+   link(onEventData,15412899:doAdd,[])
+   link(Data,15388899:Var2,[])
+  }
+  Add(LineBreak,16633606,546,560)
+  {
+   link(Out,856218:doData,[])
+   Primary=[3461262,140,-126]
+  }
+  Add(GetDataEx,15388899,609,406)
+  {
+   Angle=3
+   link(Data,14744707:Select,[(594,411)])
+  }
+  Add(Label,9705929,1043,595)
+  {
+   Left=5
+   Top=455
+   Font=[MS Sans Serif,10,1,32768,1]
+   Caption=""
+  }
+  Add(FormatStr,7607341,966,595)
+  {
+   Mask="Скопирован VIN: %1"
+   link(onFString,8414089:doWork2,[])
+   link(Str1,12365997:Var3,[(972,547)])
+  }
+  Add(Timer,16076180,966,644)
+  {
+   Interval=3000
+   Enable=1
+   AutoStop=1
+   link(onTimer,8414089:doWork3,[(1019,650)])
+  }
+  Add(Hub,13756377,924,595)
+  {
+   link(onEvent1,7607341:doString,[])
+   link(onEvent2,16076180:doTimer,[(952,608)(952,650)])
+  }
+  Add(HubEx,8414089,1015,595)
+  {
+   link(onEvent,9705929:doText,[])
+  }
+  Add(ClipboardHook,7436185,847,560)
+  {
+   link(Text,12365997:Var2,[])
+  }
+  Add(MultiStrPart,6994975,777,560)
+  {
+   link(onSplit,7436185:doSetText,[])
+   link(Str,15412899:Select,[(783,548)(713,548)(713,604)(685,604)])
+  }
+  Add(GetDataEx,2289411,798,354)
+  {
+   Angle=3
+   link(Data,12693082:Part2,[(769,359)(769,415)(734,415)])
+  }
+  Add(GetDataEx,12365997,847,542)
+  {
+   Angle=3
+   link(Data,6994975:Part2,[(824,547)(824,604)(790,604)])
+  }
+  Add(LineBreak,3802905,819,434)
+  {
+   link(Out,3365144:doEvent1,[(862,440)(862,377)])
+   Primary=[13768692,-140,-56]
+  }
+  Add(Hub,6248613,721,560)
+  {
+   link(onEvent1,6994975:doSplit,[])
+   link(onEvent2,13756377:doEvent1,[(759,573)(759,601)])
   }
 END_SDK
 Add(ChildPanel,5453932,574,280)
