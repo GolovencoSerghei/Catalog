@@ -61,7 +61,7 @@ Add(DS_SQLite,11819865,742,35)
  Name="Dbase"
  FileName="catalog.db"
 }
-Add(LineBreak,9879275,693,35)
+Add(LineBreak,13867023,693,35)
 {
  link(Out,11819865:doOpen,[])
  Primary=[2424157,-490,14]
@@ -264,7 +264,7 @@ BEGIN_SDK
      Angle=1
      link(Data,1727760:Var2,[(538,236)])
     }
-    Add(LineBreak,14481279,651,259)
+    Add(LineBreak,9293012,651,259)
     {
      link(Out,5288246:doString,[])
      Primary=[15199292,154,259]
@@ -1282,17 +1282,17 @@ Add(GHotKey,11455285,406,322)
 {
  Alt=1
  Key=81
- link(onEventHotKey,8061659:doWork1,[])
+ link(onEventHotKey,2929963:doEvent2,[(464,328)(464,342)])
 }
 Add(hcVisualText,13695303,126,595)
 {
- Lines=#2:71|
+ Lines=#2:18|
 }
 Add(hcKeyHandler,11726099,42,609)
 {
  link(onKeyDown,13695303:doText,[(100,615)(100,601)])
 }
-Add(ChildForm,8061659,476,322)
+Add(ChildForm,8061659,616,329)
 {
 }
 BEGIN_SDK
@@ -1551,14 +1551,15 @@ BEGIN_SDK
    link(onQuery,2594472:doStr,[])
    link(onError,1221109:doMessage,[(374,391)(374,433)])
   }
-  Add(StringTable,14744707,581,371)
+  Add(StringTable,14744707,574,364)
   {
    Top=40
    Width=485
    Height=165
    Columns=#14:Номер авто=100|7:VIN=175|9:Марка=170|
    Redaction=1
-   link(onClick,6614606:doEvent1,[])
+   Point(onDblClick)
+   link(onDblClick,6614606:doEvent1,[])
   }
   Add(DSC_Query,14318566,154,595)
   {
@@ -1567,11 +1568,11 @@ BEGIN_SDK
   }
   Add(MT_String,2594472,385,371)
   {
-   link(onResult,14744707:doAdd,[])
+   link(onResult,14744707:doAdd,[(495,377)(495,370)])
   }
   Add(Hub,13533591,126,357)
   {
-   link(onEvent1,14744707:doClear,[(499,363)(499,384)])
+   link(onEvent1,14744707:doClear,[(499,363)(499,377)])
    link(onEvent2,8347266:doStrCat,[(158,370)(158,377)])
   }
   Add(Message,1221109,385,427)
@@ -1651,7 +1652,7 @@ BEGIN_SDK
    link(onEventData,15412899:doAdd,[])
    link(Data,15388899:Var2,[])
   }
-  Add(LineBreak,16739791,546,560)
+  Add(LineBreak,11786623,546,560)
   {
    link(Out,856218:doData,[])
    Primary=[3461262,140,-126]
@@ -1659,7 +1660,7 @@ BEGIN_SDK
   Add(GetDataEx,15388899,609,406)
   {
    Angle=3
-   link(Data,14744707:Select,[(594,411)])
+   link(Data,14744707:Select,[(587,411)])
   }
   Add(Label,9705929,1043,595)
   {
@@ -1709,7 +1710,7 @@ BEGIN_SDK
    Angle=3
    link(Data,6994975:Part2,[(824,547)(824,604)(790,604)])
   }
-  Add(LineBreak,10303506,819,434)
+  Add(LineBreak,7286180,819,434)
   {
    link(Out,3365144:doEvent1,[(862,440)(862,377)])
    Primary=[13768692,-140,-56]
@@ -1739,7 +1740,7 @@ BEGIN_SDK
    Caption="Добавить"
    link(onClick,7144010:doData,[(520,83)(520,132)])
   }
-  Add(LineBreak,3710962,448,189)
+  Add(LineBreak,15483778,448,189)
   {
    link(Out,4657045:doWork2,[(596,195)(596,139)])
    Primary=[8607549,-294,-98]
@@ -1974,7 +1975,7 @@ BEGIN_SDK
     {
      Message="Код запчасти уже существует в базе"
     }
-    Add(LineBreak,1146238,469,273)
+    Add(LineBreak,15371493,469,273)
     {
      link(Out,14130862:doString,[])
      Primary=[11818840,175,266]
@@ -2243,12 +2244,12 @@ BEGIN_SDK
        Caption="matrix"
        Type=2
       }
-      Add(LineBreak,7516847,602,490)
+      Add(LineBreak,11942608,602,490)
       {
        link(Out,13735132:doValue,[])
        Primary=[11847765,-112,-119]
       }
-      Add(LineBreak,7065335,707,378)
+      Add(LineBreak,8744804,707,378)
       {
        Type=1
        link(Data,6793317:Value,[])
@@ -2276,7 +2277,7 @@ BEGIN_SDK
        link(onEvent1,2476482:In,[(609,566)(609,545)])
        link(onEvent2,5390507:doString,[])
       }
-      Add(LineBreak,8842003,798,588)
+      Add(LineBreak,13628424,798,588)
       {
        link(Out,7963382:doClear,[(838,594)(838,580)])
        Primary=[2476482,-182,-49]
@@ -2313,7 +2314,7 @@ BEGIN_SDK
       {
        link(Data,5631335:GetData,[])
       }
-      Add(LineBreak,7803172,1190,735)
+      Add(LineBreak,7737363,1190,735)
       {
        link(Out,16508658:doAdd,[])
        Primary=[16674888,-126,-70]
@@ -2570,7 +2571,7 @@ BEGIN_SDK
     {
      Message="Код запчасти уже существует в базе"
     }
-    Add(LineBreak,14842280,469,273)
+    Add(LineBreak,11592245,469,273)
     {
      link(Out,3357603:doString,[])
      Primary=[8313955,175,266]
@@ -2759,10 +2760,12 @@ BEGIN_SDK
 END_SDK
 Add(ChildPanel,12347117,273,217)
 {
+ link(onEvent1,2929963:doEvent1,[(422,223)(422,335)])
 }
 BEGIN_SDK
   Add(EditMulti,7386017,21,21)
   {
+   EventCount=1
    Width=867
    Height=564
   }
@@ -2776,7 +2779,7 @@ BEGIN_SDK
   }
   Add(ChildPanel,4151458,266,112)
   {
-   link(onEvent1,11413430:doWork1,[(334,118)(334,104)])
+   link(onEvent1,7386017:onEvent1,[(593,118)(593,27)])
    link(onEvent2,15569959:doWork1,[(373,125)(373,153)])
   }
   BEGIN_SDK
@@ -2836,7 +2839,7 @@ BEGIN_SDK
    Width=442
    Height=116
   }
-  Add(ChildForm,11413430,378,98)
+  Add(ChildForm,11413430,448,105)
   {
   }
   BEGIN_SDK
@@ -3011,7 +3014,7 @@ BEGIN_SDK
     {
      Message="Код запчасти уже существует в базе"
     }
-    Add(LineBreak,2509355,469,273)
+    Add(LineBreak,10074347,469,273)
     {
      link(Out,12819974:doString,[])
      Primary=[11475924,175,266]
@@ -3128,7 +3131,7 @@ BEGIN_SDK
    link(onEvent1,14589003:doWork2,[])
    link(onEvent2,10681396:doWork1,[(532,209)(532,244)])
   }
-  Add(LineBreak,1388719,70,98)
+  Add(LineBreak,12171457,70,98)
   {
    link(Out,44401:doEvent1,[])
    Primary=[3763361,546,126]
@@ -3141,3 +3144,9 @@ BEGIN_SDK
    link(onEvent3,1876488:doStop,[(172,118)(172,286)])
   }
 END_SDK
+Add(Hub,2929963,539,329)
+{
+ InCount=2
+ OutCount=1
+ link(onEvent1,8061659:doWork1,[])
+}
